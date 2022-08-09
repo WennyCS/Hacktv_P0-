@@ -1,0 +1,42 @@
+===BIGQUERY CONSOLE.CLOUD.GOOGLE.COM===
+
+SELECT * FROM `bigquery-public-data.chicago_crime.crime` LIMIT 1000;
+
+SELECT *
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE location_description = 'STREET' AND primary_type='THEFT'
+LIMIT 1000;
+
+SELECT *
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE location_description = 'STREET' OR primary_type='THEFT'
+LIMIT 1000;
+
+-- melihat jumlah elemen unik yang ada pada kolom location description
+
+SELECT
+  location_description, COUNT (1) AS location_total
+FROM
+  `bigquery-public-data.chicago_crime.crime`
+GROUP BY
+  location_description
+ORDER BY
+  location_total DESC;
+
+--SELECT AS
+SELECT primary_type as crime_type
+FROM `bigquery-public-data.chicago_crime.crime` 
+WHERE location_description='STREET'
+LIMIT 1000;
+
+-- SELECT DISTINCT
+SELECT DISTINCT primary_type as crime_type
+FROM  `bigquery-public-data.chicago_crime.crime` 
+WHERE location_description='STREET'
+LIMIT  1000;
+
+-- SELECT DENGAN OPERATOR: 
+SELECT primary_type as crime_type
+FROM  `bigquery-public-data.chicago_crime.crime` 
+WHERE primary_type in ('THEFT','ARSON')
+LIMIT  1000;
