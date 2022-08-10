@@ -22,8 +22,24 @@ git push -u origin main
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 
-=Bbrp command pada GIT BASH=
-
+Bbrp command pada GIT BASH
+=================================================
 ls >> lihat list
 mkdir tes >> membuat folder tes
 rm -r tes >> menghapus folder tes
+
+SSH dari Petani Kode
+=================================================
+
+Membuat cabang
+===============
+
+Pindah ke cabang
+================
+
+Menghapus cabang
+================
+
+Petani Kode GIT
+=================================================
+https://www.petanikode.com/tutorial/git/

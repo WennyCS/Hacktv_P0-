@@ -1,0 +1,8 @@
+Anaconda
+
+Add Anaconda 3 to the system PATH environment variable.
+
+This "add to PATH" option makes Anaconda get found before previously installed software, but may cause problems requiring you to uninstall and reinstall Anaconda.
+
+INSTEAD
+Open Anaconda3 with the Windows Start menu and select "Anaconda(64-bit)".
