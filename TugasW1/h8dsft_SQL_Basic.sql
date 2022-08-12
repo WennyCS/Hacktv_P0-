@@ -29,7 +29,7 @@ VALUES
     ('James', 'Diaz', 'Harvard University', '2003-07-18', 61000),
     ('Zack', 'Smith', 'Harvard University', '2000-12-29', 55500),
     ('Luis', 'Gonzales', 'Standford University', '2002-12-01', 50000),
-    ('Frank', 'Abbers', 'Standford University', '1999-01-30', 66000)
+    ('Frank', 'Abbers', 'Standford University', '1999-01-30', 66000),
     ('Samuel', 'Abbers', 'Standford University', '2006-01-30', 32000),
     ('Jessica', 'Abbers', 'Standford University', '2005-01-30', 33000),
     ('Tom', 'Massi', 'Harvard University', '1999-09-09', 39500),
@@ -71,40 +71,7 @@ SELECT COUNT(1) FROM courses;
 -- yang diurutkan hasilnya berdasarkan nama mata kuliah secara ascending (A-Z)
 
 SELECT MAX(teachers.salary)
-FROM teachers JOIN courses
-ON teachers.id = courses.teachers_id
-GROUP BY courses.name
-ORDER BY courses.name ASC;
-
-SELECT max(salary)
-FROM teachers;
-
-SELECT *
-FROM teachers t JOIN courses c
-ON t.id = c.teachers_id
-where t.salary =
-	(SELECT MAX (t.salary) from teachers);
-
-GROUP BY c.name
-ORDER BY c.name ASC;
-
--- experiment
-
-SELECT MAX(t.salary), *
-
 FROM teachers
-where salary =
-	(select max(salary)
-     from teachers as t where t.id = courses.teachers_id)
+JOIN courses ON teachers.id = courses.teachers_id
 GROUP BY courses.name
-order by courses.name ASC;
-
-JOIN courses
-ON teachers.id = courses.teachers_id
-
-WHERE teachers.salary = (
-  select MAX(teachers.salary)
-                        )
-
-GROUP BY courses.name and MAX(teachers.salary)
 ORDER BY courses.name ASC;
